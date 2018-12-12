@@ -1,6 +1,5 @@
 import numpy as np
 import requests
-import matplotlib.pyplot as plt
 
 """
 Module to download data, do moving average calculations.
@@ -27,10 +26,3 @@ def moving_average(data, width):
     for i in range(width, moving_avg.size - width):
         moving_avg[i] = np.mean(data[i - width:i + width])
     return moving_avg
-
-
-# def test_moving_average():
-#     avg = moving_average(np.ones(1000), 2)
-#     assert np.all(np.isnan(avg[0:2]))
-#     assert np.all(np.isnan(avg[-2:]))
-#     assert np.allclose(avg[2:-2], 1)
